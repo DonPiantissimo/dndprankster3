@@ -21,16 +21,16 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        <form onsubmit="jsfunction(); return false;">
+        <form onsubmit="jsfunction(); sendToApp();">
             <label for="level">Your level: </label><br/>
-      	<!--<textarea id="level" type="text" value="" name="level" cols= 5 rows = 1></textarea>-->
-		<input id="level" type="text" value="" name="level" autocomplete="off" required="required" />
+      		<input id="level" type="text" value="" name="level" autocomplete="off" required="required" />
 		<br/><br/>
 	<label for="HumbleSpin">Humble Spin</label>
 	 <select id = "HumbleSpin" name ="HumbleSpin" value="off">
   <option value="off">Off</option>
   <option value="on">On</option>
 </select> <br/><br/>
+	<button type="Submit">Spin</button> <br/><br/>
 	<div class="mainTextBox">
 	<textarea id="result" name="result" cols=40 rows =5 readonly>
         </textarea></div><br/><br/>
@@ -41,14 +41,16 @@ and open the template in the editor.
 		var sio = io.connect();
 			sio.on('result', function(msg){
 			document.getElementById("result").value=msg;
-			}); 
+			}); /*
                	document.addEventListener('keypress', function(event) {
 			if (event.keyCode==13){
   				sio.emit('spin', document.getElementById("level").value+"|"+document.getElementById("HumbleSpin").value);
-				//document.getElementById("level").value="";
-				//	document.getElementById("level").value=event.keyCode;
 			}
-			});
+			}); */
+	   	function sendToApp() {
+  			sio.emit('spin', document.getElementById("level").value+"|"+document.getElementById("HumbleSpin").value);
+			return false;
+		}
 	</script>
     </body>
 </html>
