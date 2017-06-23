@@ -54,7 +54,7 @@ sio.sockets.on('connection', function (client) {
 		parts = msg.split('|');
 		data.lv = parseInt(parts[0]);
                 data.safety = (parts[1]=="on");
-                if (data.lv>0 && data.lv<20) {
+                if (data.lv>0 && data.lv<21) {
                     mes=app_server.onMessage(data);
                     console.log('emitting '+mes);
                     
