@@ -68,7 +68,7 @@ sio.sockets.on('connection', function (client) {
 		console.log('spin');
 		parts = msg.split('|');
 		data.lv = parseInt(parts[0]);
-                data.safety = (parts[1]=="true");
+                data.safety = (parts[1]=="on");
                 if (data.lv>0 && data.lv<20) {
                     mes=app_server.onMessage(data);
                     console.log('emitting '+mes);
