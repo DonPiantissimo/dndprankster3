@@ -45,7 +45,7 @@ and open the template in the editor.
                	document.addEventListener('keypress', function(event) {
 			if (event.keyCode==13){
   				sio.emit('spin', document.getElementById("level").value+"|"+document.getElementById("HumbleSpin").value);
-				document.getElementById("level").value="";
+				//document.getElementById("level").value="";
 				//	document.getElementById("level").value=event.keyCode;
 			}
 			});
