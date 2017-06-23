@@ -44,26 +44,11 @@ var data = {lv:1, safety:false};
 var mes="";
 var parts;
 
-app.post('/', function(req, res) {
-	console.log('spin');
-		data.lv = parseInt(req.body.level);
-                data.safety = (req.body.HumbleSpin == "on");
-                if (data.lv>0 && data.lv<21) {
-                    mes=app_server.onMessage(data);
-                    console.log('emitting '+mes);
-                    
-                }
-		else 
-                    mes = "error";
-		sio.emit('result', mes);
-	return false;
-});
-
 sio.sockets.on('connection', function (client) {
     client.emit('onconnected', {});
     console.log('connected');
     
-		sio.emit('result', mes);
+	sio.emit('result', mes);
     	client.on('spin', function(msg) {
 		console.log('spin');
 		parts = msg.split('|');
