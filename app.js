@@ -71,8 +71,8 @@ sio.sockets.on('connection', function (client) {
                     
                 }
 		else 
-mes = "error";
-
+			mes = "error";
+		sio.emit('result', mes);
     
     client.on('disconnect', function () {
 
