@@ -18,7 +18,7 @@ server.onMessage = function(data){
     var monster = theinstance.pick_mon(theinstance.pick_cr(data.lv-1,data.safety));
     var message = "";
     if (data.safety) message+="(safe roll) \n";
-    message += "You spinned at level " + data.lv + "(base CR: "+setup_values.indexToCr[data.lv-1]+")";
+    message += "You spinned at level " + data.lv + "(base CR: "+setup_values.indexToCr[data.lv]+")";
     message += "\n"+monster.name+" (page "+monster.page+")";
     return message;
 };
