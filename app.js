@@ -62,6 +62,16 @@ sio.sockets.on('connection', function (client) {
     client.emit('onconnected', {});
     console.log('connected');
     
+		console.log('spin');
+		data.lv = 10;
+                data.safety = false;
+                if (data.lv>0 && data.lv<20) {
+                    mes=app_server.onMessage(data);
+                    console.log('emitting '+mes);
+                    
+                }
+		else 
+mes = "error";
 
     
     client.on('disconnect', function () {
