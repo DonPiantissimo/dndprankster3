@@ -40,11 +40,11 @@ and open the template in the editor.
 			sio.on('result', function(msg){
 			document.getElementById("result").value=msg;
 			}); 
-               	document.addEventListener('keypress', function(event) {
-			//if (event.keyCode<48 && event.keyCode>57 && event.keyCode!=8){
+               	document.addEventListener('keypress', function(event) 
+			if (event.keyCode==32){
   				sio.emit('spin', document.getElementById("level").value+"|"+document.getElementById("HumbleSpin").value);
-				document.getElementById("level").value=event.keyCode;
-			//}
+			//	document.getElementById("level").value=event.keyCode;
+			
 			});
 	</script>
     </body>
