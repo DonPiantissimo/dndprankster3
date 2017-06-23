@@ -40,8 +40,9 @@ and open the template in the editor.
 			sio.on('result', function(msg){
 			document.getElementById("result").value=msg;
 			}); 
-               	document.addEventListener('keydown', function(event) {
-  			sio.emit('spin', document.getElementById("level").value);
+               	document.addEventListener('keypress', function(event) {
+			if (event.code==32)
+  				sio.emit('spin', document.getElementById("level").value+"|"+document.getElementById("HumbleSpin").value);
 			});
 	</script>
     </body>
