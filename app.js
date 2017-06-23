@@ -63,7 +63,21 @@ sio.sockets.on('connection', function (client) {
     console.log('connected');
     
 		sio.emit('result', mes);
-    
+    	client.on('spin', function(msg) {
+		console.log('spin');
+		data.lv = parseInt(msg);
+                //if (req.body.HumbleSpin == "on") data.safety = true;
+		//else 
+			data.safety = false;
+                if (data.lv>0 && data.lv<20) {
+                    mes=app_server.onMessage(data);
+                    console.log('emitting '+mes);
+                    
+                }
+		else 
+                    mes = "error";
+		sio.emit('result', mes);
+	});
     client.on('disconnect', function () {
 
         //notify of disconnection
