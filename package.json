@@ -1,0 +1,10 @@
+{
+  "name": "pranksterspin",
+  "version": "0.9.0",
+  "description": "A tool for rolling prankster classes",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  }
+}
