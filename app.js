@@ -55,7 +55,7 @@ app.post('/', function(req, res) {
                 }
 		else 
                     mes = "error";
-		sio.emit('result', mes);
+		//sio.emit('result', mes);
 });
 
 sio.sockets.on('connection', function (client) {
