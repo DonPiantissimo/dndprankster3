@@ -44,21 +44,6 @@ var data = {lv:1, safety:false};
 var mes="";
 var parts;
 
-app.post('/', function(req, res) {
-	console.log('spin');
-		data.lv = parseInt(req.body.level);
-                if (req.body.HumbleSpin == "on") data.safety = true;
-		else data.safety = false;
-                if (data.lv>0 && data.lv<20) {
-                    mes=app_server.onMessage(data);
-                    console.log('emitting '+mes);
-                    
-                }
-		else 
-                    mes = "error";
-		sio.emit('result', mes);
-});
-
 sio.sockets.on('connection', function (client) {
     client.emit('onconnected', {});
     console.log('connected');
