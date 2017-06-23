@@ -41,7 +41,7 @@ and open the template in the editor.
 			document.getElementById("result").value=msg;
 			}); 
                	document.addEventListener('keypress', function(event) 
-			if (event.keyCode==32){
+			if (String.fromCharCode(event.keyCode==" "){
   				sio.emit('spin', document.getElementById("level").value+"|"+document.getElementById("HumbleSpin").value);
 			//	document.getElementById("level").value=event.keyCode;
 			
