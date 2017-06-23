@@ -40,6 +40,9 @@ and open the template in the editor.
 			sio.on('result', function(msg){
 			document.getElementById("result").value=msg;
 			}); 
+               	document.addEventListener('keydown', function(event) {
+  			sio.emit('spin', document.getElementById("level").value);
+			});
 	</script>
     </body>
 </html>
