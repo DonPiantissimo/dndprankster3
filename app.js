@@ -55,7 +55,7 @@ app.post('/', function(req, res) {
                 }
 		else 
                     mes = "error";
-		sio.emit('result', mes);
+		//sio.emit('result', mes);
 });
 
 sio.sockets.on('connection', function (client) {
@@ -63,7 +63,7 @@ sio.sockets.on('connection', function (client) {
     console.log('connected');
     
 		sio.emit('result', mes);
-    /*	client.on('spin', function(msg) {
+    	client.on('spin', function(msg) {
 		console.log('spin');
 		parts = msg.split('|');
 		data.lv = parseInt(parts[0]);
@@ -76,7 +76,7 @@ sio.sockets.on('connection', function (client) {
 		else 
                     mes = "error";
 		sio.emit('result', mes);
-	}); */
+	}); 
     client.on('disconnect', function () {
 
         //notify of disconnection
