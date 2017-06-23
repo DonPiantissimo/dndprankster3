@@ -21,9 +21,11 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        <form>
+        <form onsubmit="jsfunction(); return false;">
             <label for="level">Your level: </label><br/>
-      	<textarea id="level" type="text" value="" name="level" cols= 5 rows = 1></textarea><br/><br/>
+      	<!--<textarea id="level" type="text" value="" name="level" cols= 5 rows = 1></textarea>-->
+		<input id="level" type="text" value="" name="level" autocomplete="off" required="required" />
+		<br/><br/>
 	<label for="HumbleSpin">Humble Spin</label>
 	 <select id = "HumbleSpin" name ="HumbleSpin" value="off">
   <option value="off">Off</option>
